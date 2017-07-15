@@ -1,30 +1,39 @@
 package testCases;
 
-import org.junit.Test;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Test;
 
-import wrappers.GenericWrappers;
-
-public class CreateLead extends GenericWrappers{
+public class CreateLead{
 
 	@Test
 	public void login() throws Exception{
-		//Launch the Browser
-		invokeApp("chrome", "http://leaftaps.com");
-		//Enter the userName
-		enterById("username", "DemoSalesManager");
-	//	driver.findElementById("username").sendKeys("DemoSalesManager");		
-		//Enter the password
-		enterById("password", "crmsfa");
-	//	driver.findElementById("password").sendKeys("crmsfa");	
-		//Click Login
-		clickByClassName("decorativeSubmit");
-	//	driver.findElementByClassName("decorativeSubmit").click();
-		// Java Wait
 		
-		clickByLink("CRM/SFA");
+		DesiredCapabilities dc = new DesiredCapabilities();
+		dc.setPlatform(Platform.WINDOWS);
+		dc.setBrowserName("chrome");		
+		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), dc);
 		
-	
-		//closeBrowser();
+		/*System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver();*/
+		driver.get("http://leaftaps.com/opentaps");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		driver.findElementById("username").sendKeys("DemoSalesManager");		
+		driver.findElementById("password").sendKeys("crmsfa");
+		driver.findElementByClassName("decorativeSubmit").click();
+		
+		driver.findElementByLinkText("CRM/SFA").click();
+		driver.findElementByLinkText("Leads").click();
+		driver.findElementByLinkText("Create Lead").click();
+		driver.findElementById("createLeadForm_companyName").sendKeys("TestLeaf");
+		driver.findElementById("createLeadForm_firstName").sendKeys("Gopinath");
+		driver.findElementById("createLeadForm_lastName").sendKeys("Jayakumar");
+		driver.findElementByXPath("(//input[@name='submitButton'])").click();
 	}
 }
 

@@ -13,7 +13,7 @@ public interface Wrappers {
 		 * @throws Exception 
 		 * 
 		 */
-		public void invokeApp(String browser, String url) throws Exception;
+		public void invokeApp(String browser, String url);
 
 		/**
 		 * This method will enter the value to the text field using id attribute to locate
@@ -24,7 +24,7 @@ public interface Wrappers {
 		 * @return 
 		 * @throws Exception 
 		 */
-		public void enterById(String idValue, String data) throws Exception;
+		public void enterById(String idValue, String data);
 		
 		/**
 		 * This method will enter the value to the text field using name attribute to locate
@@ -33,16 +33,16 @@ public interface Wrappers {
 		 * @param data - The data to be sent to the webelement
 		 * @author Babu - TestLeaf
 		 */
-		public void enterByName(String nameValue, String data)  throws Exception;	
+		public void enterByName(String nameValue, String data) ;	
 		
 		/**
 		 * This method will enter the value to the text field using xpath attribute to locate
 		 * 
-		 * @param xpathValue - name of the webelement
+		 * @param xpathValue - Xpath of the webelement
 		 * @param data - The data to be sent to the webelement
 		 * @author Babu - TestLeaf
 		 */
-		public void enterByXpath(String xpathValue, String data) throws Exception;
+		public void enterByXpath(String xpathValue, String data);
 
 
 		/**
@@ -50,7 +50,7 @@ public interface Wrappers {
 		 * @param title - The expected title of the browser
 		 * @author Babu - TestLeaf
 		 */
-		public boolean verifyTitle(String title);
+		public void verifyTitle(String title);
 		
 		/**
 		 * This method will verify the given text
@@ -62,7 +62,7 @@ public interface Wrappers {
 		
 		/**
 		 * This method will verify the given text with exact match
-		 * @param xpath - The locator of the object in id
+		 * @param xpath - The locator of the object in Xpath
 		 * @param text  - The text to be verified
 		 * @author Babu - TestLeaf
 		 */
@@ -82,7 +82,7 @@ public interface Wrappers {
 		 * @param id  The id (locator) of the element to be clicked
 		 * @author Babu - TestLeaf
 		 */
-		public void clickById(String id)  throws Exception;
+		public void clickById(String id) ;
 
 		/**
 		 * This method will click the element using id as locator
@@ -90,14 +90,14 @@ public interface Wrappers {
 		 * @author Babu - TestLeaf
 		 * @throws Exception 
 		 */
-		public void clickByClassName(String classVal) throws Exception;
+		public void clickByClassName(String classVal);
 		
 		/**
 		 * This method will click the element using name as locator
 		 * @param name  The name (locator) of the element to be clicked
 		 * @author Babu - TestLeaf
 		 */
-		public void clickByName(String name)  throws Exception;
+		public void clickByName(String name) ;
 		
 
 		/**
@@ -105,28 +105,28 @@ public interface Wrappers {
 		 * @param name  The link name (locator) of the element to be clicked
 		 * @author Babu - TestLeaf
 		 */
-		public void clickByLink(String name) throws Exception;
+		public void clickByLink(String name);
 		
 		/**
 		 * This method will click the element using link name as locator and do not take snap
 		 * @param name  The link name (locator) of the element to be clicked
 		 * @author Babu - TestLeaf
 		 */
-		public void clickByLinkNoSnap(String name) throws Exception;
+		public void clickByLinkNoSnap(String name);
 
 		/**
 		 * This method will click the element using xpath as locator
 		 * @param xpathVal  The xpath (locator) of the element to be clicked
 		 * @author Babu - TestLeaf
 		 */
-		public void clickByXpath(String xpathVal) throws Exception;
+		public void clickByXpath(String xpathVal);
 		
 		/**
 		 * This method will click the element using xpath as locator
 		 * @param xpathVal  The xpath (locator) of the element to be clicked
 		 * @author Babu - TestLeaf
 		 */
-		public void clickByXpathNoSnap(String xpathVal) throws Exception;
+		public void clickByXpathNoSnap(String xpathVal);
 		
 		/**
 		 * This method will get the text of the element using id as locator
@@ -148,7 +148,7 @@ public interface Wrappers {
 		 * @param value The value to be selected (visibletext) from the dropdown 
 		 * @author Babu - TestLeaf
 		 */
-		public void selectVisibileTextById(String id, String value) throws Exception;
+		public void selectVisibileTextById(String id, String value);
 		
 		/**
 		 * This method will select the drop down using index as id locator
@@ -156,7 +156,7 @@ public interface Wrappers {
 		 * @param value The value to be selected (visibletext) from the dropdown 
 		 * @author Babu - TestLeaf
 		 */
-		public void selectIndexById(String id, int value) throws Exception;
+		public void selectIndexById(String id, int value);
 		
 		/**
 		 * This method will switch to the parent Window
@@ -192,7 +192,7 @@ public interface Wrappers {
 		 * This method will take snapshot of the browser
 		 * @author Babu - TestLeaf
 		 */
-		public long takeSnap();
+		public void takeSnap();
 			
 		/**
 		 * This method will close the active browser

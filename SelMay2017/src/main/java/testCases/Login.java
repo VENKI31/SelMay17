@@ -26,7 +26,7 @@ public class Login extends LeafTapsWrapper{
 		clickByClassName("decorativeSubmit");
 		//	driver.findElementByClassName("decorativeSubmit").click();
 
-		quitBrowser();
+		closeAllBrowsers();
 	}
 /*
 	@DataProvider(name="fetchData", parallel = true)

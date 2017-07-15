@@ -2,9 +2,9 @@ package testCases;
 
 import org.junit.Test;
 
-import wrappers.GenericWrappers;
+import wrappers.WrapperMethods;
 
-public class LoginSalesForce extends GenericWrappers{
+public class LoginSalesForce extends WrapperMethods{
 
 	@Test
 	public void login() throws Exception{

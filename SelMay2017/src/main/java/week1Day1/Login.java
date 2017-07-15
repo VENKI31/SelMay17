@@ -19,9 +19,9 @@ public class Login {
 		//Maximize
 		driver.manage().window().maximize();
 		//Load d URL
-		driver.get("http://leaftaps.com");
+		driver.get("http://leaftaps.com/opentaps");
 		//Enter the userName
-		driver.findElementById("username1").sendKeys("DemoSalesManager");
+		driver.findElementById("username").sendKeys("DemoSalesManager");
 		//Enter the password
 		driver.findElementById("password").sendKeys("crmsfa");
 		//Click Login

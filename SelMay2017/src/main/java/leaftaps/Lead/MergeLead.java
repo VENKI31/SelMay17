@@ -4,11 +4,10 @@ import org.testng.annotations.Test;
 
 import wrappers.LeafTapsWrapper;
 
-
 public class MergeLead extends LeafTapsWrapper {
-	
-	@Test(groups={"sanity"},dependsOnGroups={"smoke"})
-	public void mergeLead() throws Exception{
+
+	@Test(groups = { "sanity" }, dependsOnGroups = { "smoke" })
+	public void mergeLead() throws Exception {
 		clickByLink("Leads");
 		clickByLink("Merge Leads");
 		clickByXpath("(//img[@alt='Lookup'])[1]");
@@ -28,13 +27,13 @@ public class MergeLead extends LeafTapsWrapper {
 		clickByXpathNoSnap("(//div[@class='x-grid3-cell-inner x-grid3-col-partyId'])[1]/a");
 		switchToParentWindow();
 		clickByLinkNoSnap("Merge");
-		alertAccept();
+		acceptAlert();
 		clickByLink("Find Leads");
 		enterByXpath("//label[contains(text(),'Lead ID:')]/following::input", sText);
 		clickByXpath("//button[contains(text(),'Find Leads')]");
 		Thread.sleep(2000);
 		verifyTextContainsByXpath("//div[@class='x-paging-info']", "No records to display");
-			
+
 	}
 
 }

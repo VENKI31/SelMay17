@@ -6,7 +6,7 @@ import wrappers.LeafTapsWrapper;
 
 
 public class MergeContact extends LeafTapsWrapper {
-	
+		
 	@Test
 	public void mergeContact() throws Exception{
 		clickByLink("Contacts");
@@ -22,7 +22,7 @@ public class MergeContact extends LeafTapsWrapper {
 		clickByXpathNoSnap("(//div[@class='x-grid3-cell-inner x-grid3-col-partyId'])[2]/a");
 		switchToParentWindow();
 		clickByLinkNoSnap("Merge");
-		alertAccept();
+		acceptAlert();
 		clickByLink("Find Contacts");
 		enterByXpath("//label[contains(text(),'Contact Id:')]/following::input", sText);
 		clickByXpath("//button[contains(text(),'Find Contacts')]");

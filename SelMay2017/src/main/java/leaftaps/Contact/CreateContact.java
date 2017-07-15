@@ -1,23 +1,12 @@
 package leaftaps.Contact;
 
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import wrappers.GenericWrappers;
+import wrappers.LeafTapsWrapper;
 
-public class CreateContact extends GenericWrappers{
+public class CreateContact extends LeafTapsWrapper{
 	
-	@BeforeTest
-	public void sample() throws Exception{
-		invokeApp("chrome", "http://leaftaps.com/opentaps");	
-		enterById("username", "DemoSalesManager");
-		enterById("password", "crmsfa");
-		clickByClassName("decorativeSubmit");
-		clickByLink("CRM/SFA");		
-	}
-	
-
 	@Test(dataProvider = "fetch")
 	public void  createContact(String fName, String lName) throws Exception {				
 		clickByLink("Contacts");
